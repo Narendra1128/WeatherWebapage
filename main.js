@@ -115,6 +115,7 @@ function renderWeatherInfo(weatherInfo){
 async function fetchUserWeatherInfo(coordinates){
     grantAccessContainer.classList.remove("active");
     loadingScreen.classList.add("active");
+    notFound.classList.remove("active")
     const {lat, lon} = coordinates;
    
     try{
@@ -140,6 +141,8 @@ async function fetchUserWeatherInfo(coordinates){
 async function fetchSearchWeatherInfo(city) {
     loadingScreen.classList.add("active");
     grantAccessContainer.classList.remove("active");
+    notFound.classList.remove("active")
+
 
     try {
         const response = await fetch(
